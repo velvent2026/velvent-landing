@@ -926,7 +926,8 @@ html, body {
 .hero-content {
   position: relative;
   z-index: 3;
-  max-width: 700px;
+  max-width: 6400px;
+  margin-left: 6%;
   color: #ffffff;
 }
 
@@ -1164,9 +1165,4 @@ html, body {
     padding-bottom: 80px;
   }
 }
-.hero-content {
-  position: relative;
-  z-index: 3;
-  max-width: 640px;
-  margin-left: 6%;
-}
+
