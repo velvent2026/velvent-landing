@@ -13,6 +13,60 @@ import { supabase } from "./supabase.js";
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ===============================
+     MOBILE MENU TOGGLE
+  ================================ */
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const linksContainer = document.querySelector('.links-container');
+
+  if (mobileMenuToggle && linksContainer) {
+    mobileMenuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      linksContainer.classList.toggle('active');
+      
+      if (linksContainer.classList.contains('active')) {
+        mobileMenuToggle.innerHTML = '×';
+        mobileMenuToggle.style.fontSize = '32px';
+        mobileMenuToggle.style.fontWeight = '300';
+      } else {
+        mobileMenuToggle.innerHTML = '☰';
+        mobileMenuToggle.style.fontSize = '24px';
+        mobileMenuToggle.style.fontWeight = 'normal';
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!linksContainer.contains(e.target) && 
+          !mobileMenuToggle.contains(e.target) &&
+          window.innerWidth <= 768) {
+        linksContainer.classList.remove('active');
+        mobileMenuToggle.innerHTML = '☰';
+        mobileMenuToggle.style.fontSize = '24px';
+        mobileMenuToggle.style.fontWeight = 'normal';
+      }
+    });
+
+    linksContainer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          linksContainer.classList.remove('active');
+          mobileMenuToggle.innerHTML = '☰';
+          mobileMenuToggle.style.fontSize = '24px';
+          mobileMenuToggle.style.fontWeight = 'normal';
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        linksContainer.classList.remove('active');
+        mobileMenuToggle.innerHTML = '☰';
+        mobileMenuToggle.style.fontSize = '24px';
+        mobileMenuToggle.style.fontWeight = 'normal';
+      }
+    });
+  }
+
+  /* ===============================
      FAQ TOGGLE
   ================================ */
   document.querySelectorAll(".faq-header").forEach(header => {
