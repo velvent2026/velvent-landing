@@ -68,97 +68,70 @@ body {
 }
 
 /* CONTENT */
-.content {
-  max-width: 1000px;
+.container {
+  max-width: 1100px;
   margin: 160px auto 140px;
   padding: 0 20px;
 }
 
-.content h1 {
+.container h1 {
   font-size: 42px;
-  margin-bottom: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
 
-.intro {
-  color: #d1d1d1;
-  line-height: 1.7;
-  margin-bottom: 42px;
+/* OVERVIEW */
+.overview {
+  max-width: 800px;
+  margin-bottom: 60px;
 }
 
-/* EXISTING SECTIONS */
-.section {
-  margin-bottom: 36px;
-}
-
-.section h2 {
+.overview h3 {
   font-size: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
-.section ul {
-  margin-left: 18px;
-}
-
-.section li {
-  color: #dcdcdc;
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-
-.outro {
+.overview p {
   color: #cfcfcf;
-  margin-top: 30px;
-  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 14px;
 }
 
-/* SUB TYPES */
-.subtypes {
-  margin-top: 70px;
+/* CATEGORIES */
+.categories h2 {
+  font-size: 26px;
+  margin-bottom: 28px;
 }
 
-.subtypes h2 {
-  font-size: 24px;
-  margin-bottom: 26px;
-}
-
-/* GRID */
-.subtype-grid {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 26px;
+  gap: 22px;
 }
 
 /* CARD */
-.subtype-card {
-  padding: 26px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.14);
-  backdrop-filter: blur(18px);
-  transition: 
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease,
-    background 0.35s ease;
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 22px;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.subtype-card h3 {
-  font-size: 17px;
-  margin-bottom: 12px;
+.card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.subtype-card p {
+.card h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card p {
   font-size: 14px;
-  line-height: 1.6;
-  color: #d6d6d6;
-}
-
-/* SUPER INTERACTIVE HOVER */
-.subtype-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.35);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  color: #cfcfcf;
+  line-height: 1.5;
 }
 
 /* FOOTER */
@@ -211,17 +184,16 @@ body {
 .footer-socials i:hover {
   color: #fff;
 }
+
 .footer-socials a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   width: 36px;
   height: 36px;
   text-decoration: none;
   cursor: pointer;
   color: rgba(255,255,255,0.75);
-
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
@@ -315,95 +287,75 @@ body {
     display: block !important;
   }
   
-  /* ---------------- CONTENT MOBILE ---------------- */
-  .content {
+  /* ---------------- MAIN CONTENT MOBILE ---------------- */
+  .container {
     margin: 120px auto 80px !important;
     padding: 0 20px !important;
     max-width: 100% !important;
   }
   
-  .content h1 {
+  .container h1 {
     font-size: 2.2rem !important;
     text-align: center !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 25px !important;
   }
   
-  .intro {
-    font-size: 1.1rem !important;
-    text-align: center !important;
-    margin-bottom: 30px !important;
+  /* ---------------- OVERVIEW SECTION MOBILE ---------------- */
+  .overview {
+    margin-bottom: 40px !important;
     padding: 0 10px !important;
-    line-height: 1.6 !important;
   }
   
-  /* ---------------- SECTION MOBILE ---------------- */
-  .section {
-    padding: 25px 20px !important;
-    margin: 25px 0 !important;
-  }
-  
-  .section h2 {
+  .overview h3 {
     font-size: 1.6rem !important;
+    text-align: center !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .overview p {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
     margin-bottom: 15px !important;
     text-align: center !important;
   }
   
-  .section ul {
-    padding-left: 20px !important;
-  }
-  
-  .section li {
-    margin-bottom: 12px !important;
-    font-size: 1rem !important;
-    line-height: 1.5 !important;
-  }
-  
-  .outro {
-    font-size: 1.1rem !important;
-    text-align: center !important;
-    padding: 0 15px !important;
-    margin-top: 20px !important;
-    line-height: 1.6 !important;
-  }
-  
-  /* ---------------- CATEGORIES GRID MOBILE ---------------- */
-  .subtypes {
-    margin-top: 50px !important;
+  /* ---------------- CATEGORIES SECTION MOBILE ---------------- */
+  .categories {
     padding: 0 !important;
   }
   
-  .subtypes h2 {
+  .categories h2 {
     font-size: 1.8rem !important;
     text-align: center !important;
     margin-bottom: 30px !important;
   }
   
-  .subtype-grid {
+  /* Grid - single column on mobile */
+  .card-grid {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
   
-  .subtype-card {
+  /* Cards mobile styling */
+  .card {
     padding: 25px 20px !important;
     text-align: center !important;
   }
   
-  .subtype-card h3 {
+  .card h4 {
     font-size: 1.4rem !important;
     margin-bottom: 12px !important;
   }
   
-  .subtype-card p {
+  .card p {
     font-size: 1rem !important;
     line-height: 1.5 !important;
   }
   
   /* Remove hover effects on mobile */
-  .subtype-card:hover {
+  .card:hover {
     transform: none !important;
-    background: rgba(255,255,255,0.06) !important;
-    border-color: rgba(255,255,255,0.14) !important;
-    box-shadow: none !important;
+    background: rgba(255, 255, 255, 0.08) !important;
   }
   
   /* ---------------- FOOTER MOBILE ---------------- */
@@ -447,23 +399,27 @@ body {
 
 /* Smaller mobile devices */
 @media (max-width: 480px) {
-  .content h1 {
+  .container h1 {
     font-size: 1.9rem !important;
   }
   
-  .intro {
+  .overview h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  .overview p {
     font-size: 1rem !important;
   }
   
-  .section h2 {
-    font-size: 1.5rem !important;
-  }
-  
-  .subtypes h2 {
+  .categories h2 {
     font-size: 1.6rem !important;
   }
   
-  .subtype-card {
+  .card {
     padding: 22px 18px !important;
+  }
+  
+  .card h4 {
+    font-size: 1.3rem !important;
   }
 }
