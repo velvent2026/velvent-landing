@@ -1,0 +1,581 @@
+/* ================= ROOT ================= */
+
+:root {
+  --glass: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.14);
+  --text: #ffffff;
+  --muted: #b8c1d8;
+  --accent: #4a90ff;
+  --glow: rgba(74,144,255,0.45);
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ================= RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 40%),
+    linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.95)),
+    url("../images/common/hero_bg.jpeg") center / cover no-repeat fixed;
+  overflow-x: hidden;
+}
+
+/* ================= GLASS UTILITY ================= */
+
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px;
+}
+
+/* ================= HEADER ================= */
+
+.top-nav {
+  position: fixed;
+  top: 24px;
+  width: 100%;
+  height: 64px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* logo */
+.nav-logo-wrap {
+  position: absolute;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+
+.nav-logo {
+  height: 50px;
+}
+
+/* centered pill */
+.nav-pill {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 26px;
+  padding: 10px 28px;
+  pointer-events: auto;
+}
+
+.nav-pill a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color .3s ease;
+}
+
+.nav-pill a:hover {
+  color: var(--text);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  text-align: center;
+  padding: 200px 20px 120px;
+}
+
+.hero h1 {
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  max-width: 900px;
+  margin: 0 auto 28px;
+}
+
+.hero p {
+  max-width: 620px;
+  margin: 0 auto 36px;
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(200,210,255,0.85);
+}
+
+.hero-muted {
+  display: block;
+  font-weight: 600;
+  color: #e6ebff;
+}
+
+.hero .btn.primary {
+  margin-top: 10px;
+  padding: 16px 28px;
+  font-size: 15px;
+  border-radius: 999px;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section {
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 40px;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+}
+
+/* ================= IDEA BOX ================= */
+
+.idea-box {
+  padding: 48px;
+  position: relative;
+  transition: all .6s var(--ease-premium);
+}
+
+.idea-box:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+  box-shadow:
+    0 40px 90px rgba(0,0,0,.65),
+    0 0 40px rgba(74,144,255,.25);
+}
+
+.idea-box p {
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.idea-box::after {
+  content: "";
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 20px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(74,144,255,.6),
+    transparent
+  );
+}
+
+/* ================= ROLES ================= */
+
+.roles-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* role card */
+.role-card {
+  padding: 34px;
+  border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.045),
+    rgba(255,255,255,0.02)
+  );
+  transition:
+    transform .7s var(--ease-premium),
+    box-shadow .7s var(--ease-premium),
+    border-color .7s var(--ease-premium);
+  will-change: transform;
+}
+
+/* gradient sweep */
+.role-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(74,144,255,0.08),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity .6s var(--ease-premium);
+}
+
+.role-card:hover::before {
+  opacity: 1;
+}
+
+/* hover lift */
+.role-card:hover {
+  transform: translateY(-16px) scale(1.025);
+  border-color: var(--accent);
+  box-shadow:
+    0 50px 120px rgba(0,0,0,.75),
+    0 0 40px rgba(74,144,255,.35);
+}
+
+/* icon */
+.role-card i {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 16px;
+  color: #9fb8ff;
+  transition: all .6s var(--ease-premium);
+}
+
+.role-card:hover i {
+  transform: rotate(-8deg) scale(1.2);
+  color: #ffffff;
+}
+
+.role-card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.role-card span {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ================= STEPS ================= */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.step-card {
+  position: relative;
+  padding: 32px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  transition: all 0.6s var(--ease-premium);
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.6),
+    0 0 30px rgba(74,144,255,0.25);
+}
+
+/* step number */
+.step-number {
+  font-size: 20px;
+  font-weight: 1000;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+}
+
+/* title */
+.step-card h3 {
+  margin: 12px 0 6px;
+  font-size: 20px;
+}
+
+/* description */
+.step-card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ================= FORM ================= */
+
+.form-card {
+  max-width: 600px;
+  margin: auto;
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-card input,
+.form-card textarea,
+.form-card .glass-select,
+.form-card button {
+  width: 100%;
+}
+
+
+input, select, textarea {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  transition: border-color .3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+}
+
+select option {
+  background: #111;
+}
+
+/* ================= BUTTON ================= */
+
+.btn {
+  padding: 14px;
+  border-radius: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform .4s var(--ease-premium),
+    box-shadow .4s var(--ease-premium);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #4a90ff, #2f6bff);
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px var(--glow);
+}
+
+/* ================= FOOTER ================= */
+
+.note {
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.closing {
+  text-align: center;
+  color: var(--muted);
+  margin: 100px 0;
+  font-style: italic;
+}
+
+/* ================= CUSTOM GLASS SELECT ================= */
+
+.glass-select {
+  position: relative;
+  width: 100%;
+  user-select: none;
+}
+
+/* trigger */
+.select-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.4s var(--ease-premium);
+}
+
+.select-trigger:hover {
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.08);
+}
+
+.select-trigger .selected-value {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.select-trigger .arrow {
+  transition: transform 0.4s var(--ease-premium);
+}
+
+/* dropdown */
+.select-dropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 10px);
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(20,20,20,0.85);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.75),
+    0 0 30px rgba(74,144,255,0.25);
+
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.45s var(--ease-premium);
+  z-index: 50;
+}
+
+/* option */
+.select-dropdown .option {
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #e6ebff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.select-dropdown .option:hover {
+  background: linear-gradient(135deg, #4a90ff, #2f6bff);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(74,144,255,0.4);
+}
+
+/* open state */
+.glass-select.open .select-dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.glass-select.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* selected text active */
+.glass-select.selected .selected-value {
+  color: #ffffff;
+}
+.discord-popup {
+  position: fixed;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+  display: none;
+
+  max-width: 720px;
+  width: calc(100% - 40px);
+  padding: 28px 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.05)
+  );
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.65);
+
+  z-index: 9999;
+  animation: popupFade 0.35s ease forwards;
+}
+
+/* TEXT BLOCK */
+.discord-popup h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.discord-popup p {
+  max-width: 420px;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* BUTTON */
+.discord-popup .btn {
+  white-space: nowrap;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  height: fit-content;
+}
+
+/* ANIMATION */
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+  .discord-popup {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .discord-popup p {
+    max-width: none;
+  }
+}
+.discord-popup {
+  display: none;
+}
+.discord-popup a {
+  text-decoration: none;
+}
+.discord-popup .btn {
+  text-decoration: none;
+}
+.discord-popup .btn:hover {
+  text-decoration: none;
+}
+
+.discord-popup h2 {
+  white-space: nowrap;
+}
+.discord-popup h2 {
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: -0.3px;
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Velvent – Work With Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="work.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="top-nav">
+  <div class="nav-logo-wrap">
+    <img src="../images/common/velvent_logo_white.png" class="nav-logo" />
+  </div>
+
+  <div class="nav-pill glass">
+    <a href="../index.html">Home</a>
+    <a href="../pricing/index.html">Pricing</a>
+    <a href="../about/index.html">About Us</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <h1>Build Velvent.<br>Let's collaborate and work together.</h1>
+  <p>
+    We’re forming a real organization to build Velvent from the ground up.
+    Consider this an invitation to co-create something meaningful.
+  </p>
+
+  <button class="btn primary" id="joinCoreBtn">Join the Core Team</button>
+</section>
+
+<!-- ================= VELVENT IDEA ================= -->
+<section class="section">
+  <div class="idea-box glass">
+    <h2>What is Velvent?</h2>
+
+    <p>
+      Velvent is a collaboration-first platform designed to help individuals,
+      founders, and teams come together to build real products, organizations,
+      and long-term value.
+    </p>
+
+    <p>
+      Unlike traditional freelancing or networking platforms, Velvent focuses on
+      execution, trust, and contribution.
+    </p>
+
+    <p>
+      At the core of Velvent is a reputation-driven system that enables people to
+      grow from contributors into trusted team members.
+    </p>
+
+    <div class="idea-points">
+      <span>Startup & Team Formation</span>
+      <span>Freelance & Task-Based Work</span>
+      <span>Reputation & Trust (Vance)</span>
+      <span>Growth into Organizations</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="section glass">
+  <h2>Why we are collaborating?</h2>
+  <p>
+    While we already have a clear vision, early product development requires a
+    dedicated organization formed by people who believe in the idea.
+    <br><br>
+    This is an invitation to help build something meaningful from its foundation.
+  </p>
+</section>
+
+<!-- ================= ROLES ================= -->
+<section class="section">
+  <h2>Who we’re looking for</h2>
+
+  <div class="role-card glass">
+    <i data-lucide="code-2"></i>
+    <h3>Engineering</h3>
+    <span>Frontend · Backend · Full-stack</span>
+  </div>
+
+  <div class="role-card glass">
+    <i data-lucide="palette"></i>
+    <h3>Design</h3>
+    <span>UI / UX · Product · Motion</span>
+  </div>
+
+  <div class="role-card glass">
+    <i data-lucide="megaphone"></i>
+    <h3>Growth</h3>
+    <span>Marketing · Content · Community</span>
+  </div>
+
+  <div class="role-card glass">
+    <i data-lucide="brain-circuit"></i>
+    <h3>Strategy</h3>
+    <span>Product · Business · Operations</span>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section glass">
+  <h2>How we are going to work?</h2>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <span class="step-number">01</span>
+      <h3>Apply</h3>
+      <p>Tell us who you are and what excites you.</p>
+    </div>
+
+    <div class="step-card">
+      <span class="step-number">02</span>
+      <h3>Connect</h3>
+      <p>No interviews — just honest conversations.</p>
+    </div>
+
+    <div class="step-card">
+      <span class="step-number">03</span>
+      <h3>Build</h3>
+      <p>Work on real features with real impact.</p>
+    </div>
+
+    <div class="step-card">
+      <span class="step-number">04</span>
+      <h3>Grow</h3>
+      <p>Early contributors become core members.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOIN FORM ================= -->
+<section class="section">
+  <form class="form-card glass" id="joinForm"
+        action="https://formspree.io/f/xkogqnkp"
+        method="POST">
+
+    <h2>Join Velvent.</h2>
+
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Email address" required>
+
+    <input type="hidden" name="interest" id="interestInput">
+
+    <div class="glass-select" id="interestSelect">
+      <div class="select-trigger">
+        <span class="selected-value">Area of interest</span>
+        <span class="arrow">▾</span>
+      </div>
+
+      <div class="select-dropdown">
+        <div class="option">Development</div>
+        <div class="option">Design</div>
+        <div class="option">Marketing</div>
+        <div class="option">Strategy</div>
+        <div class="option">Other</div>
+      </div>
+    </div>
+
+    <textarea name="message"
+      placeholder="Why do you want to build Velvent with us?"
+      required></textarea>
+
+    <button class="btn primary" type="submit">Submit</button>
+
+    <p class="note">We read every submission carefully.</p>
+  </form>
+</section>
+
+<!-- ================= DISCORD POPUP ================= -->
+<div id="discordPopup" class="discord-popup glass">
+  <h2>You’re in!</h2>
+  <p>
+    Thanks for your interest in building Velvent.
+    Join our Discord server to connect with the team.
+  </p>
+
+  <a href="https://discord.gg/V5SEMwUH"
+     target="_blank"
+     class="btn primary">
+     Join Velvent Discord
+  </a>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<p class="closing">
+  Velvent is built for the long run — by people who care.
+</p>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  lucide.createIcons();
+
+  // Scroll to form
+  document.getElementById("joinCoreBtn").addEventListener("click", () => {
+    document.getElementById("joinForm").scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  });
+
+  // Dropdown
+  const select = document.getElementById("interestSelect");
+  const trigger = select.querySelector(".select-trigger");
+  const value = select.querySelector(".selected-value");
+  const options = select.querySelectorAll(".option");
+
+  trigger.addEventListener("click", () => {
+    select.classList.toggle("open");
+  });
+
+  options.forEach(option => {
+    option.addEventListener("click", () => {
+      value.textContent = option.textContent;
+      document.getElementById("interestInput").value = option.textContent;
+      select.classList.add("selected");
+      select.classList.remove("open");
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!select.contains(e.target)) {
+      select.classList.remove("open");
+    }
+  });
+
+  // Form submit + popup
+  const form = document.getElementById("joinForm");
+  const popup = document.getElementById("discordPopup");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    await fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" }
+    });
+
+    popup.style.display = "flex";
+    form.reset();
+  });
+
+});
+</script>
+
+</body>
+</html>
