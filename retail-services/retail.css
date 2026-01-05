@@ -216,7 +216,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  width: 36px;          /* 👈 clickable area */
+  width: 36px;
   height: 36px;
   text-decoration: none;
   cursor: pointer;
@@ -233,4 +233,237 @@ body {
 /* THIS FIXES THE CLICK ISSUE */
 .footer-socials svg {
   pointer-events: none;
+}
+
+/* ===========================================
+   MOBILE RESPONSIVE FIXES - ADDED AT THE END
+=========================================== */
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  
+  /* ---------------- NAVBAR MOBILE ---------------- */
+  .navbar {
+    padding: 15px 20px !important;
+    top: 0 !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+  }
+  
+  .nav-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: relative !important;
+  }
+  
+  .nav-logo img {
+    height: 35px !important;
+  }
+  
+  /* Hide desktop nav-pill by default on mobile */
+  .nav-pill {
+    display: none !important;
+    position: fixed !important;
+    top: 70px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+    background: rgba(15, 17, 19, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    flex-direction: column !important;
+    padding: 25px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
+    z-index: 1001 !important;
+    gap: 0 !important;
+  }
+  
+  .nav-pill.active {
+    display: flex !important;
+  }
+  
+  .nav-pill a {
+    padding: 12px 0 !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    opacity: 1 !important;
+    width: 100% !important;
+  }
+  
+  .nav-pill a:last-child {
+    border-bottom: none !important;
+  }
+  
+  /* Show mobile menu button on mobile */
+  .mobile-menu-toggle {
+    display: block !important;
+  }
+  
+  /* ---------------- CONTENT MOBILE ---------------- */
+  .content {
+    margin: 120px auto 80px !important;
+    padding: 0 20px !important;
+    max-width: 100% !important;
+  }
+  
+  .content h1 {
+    font-size: 2.2rem !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .intro {
+    font-size: 1.1rem !important;
+    text-align: center !important;
+    margin-bottom: 30px !important;
+    padding: 0 10px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* ---------------- SECTION MOBILE ---------------- */
+  .section {
+    padding: 25px 20px !important;
+    margin: 25px 0 !important;
+  }
+  
+  .section h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 15px !important;
+    text-align: center !important;
+  }
+  
+  .section ul {
+    padding-left: 20px !important;
+  }
+  
+  .section li {
+    margin-bottom: 12px !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .outro {
+    font-size: 1.1rem !important;
+    text-align: center !important;
+    padding: 0 15px !important;
+    margin-top: 20px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* ---------------- CATEGORIES GRID MOBILE ---------------- */
+  .subtypes {
+    margin-top: 50px !important;
+    padding: 0 !important;
+  }
+  
+  .subtypes h2 {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+    margin-bottom: 30px !important;
+  }
+  
+  .subtype-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  .subtype-card {
+    padding: 25px 20px !important;
+    text-align: center !important;
+  }
+  
+  .subtype-card h3 {
+    font-size: 1.4rem !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .subtype-card p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Remove hover effects on mobile */
+  .subtype-card:hover {
+    transform: none !important;
+    background: rgba(255,255,255,0.06) !important;
+    border-color: rgba(255,255,255,0.14) !important;
+    box-shadow: none !important;
+  }
+  
+  /* ---------------- FOOTER MOBILE ---------------- */
+  .site-footer {
+    padding: 40px 20px !important;
+  }
+  
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .footer-center {
+    flex-direction: column !important;
+    gap: 15px !important;
+    order: 2;
+  }
+  
+  .footer-left {
+    order: 1;
+  }
+  
+  .footer-socials {
+    justify-self: center !important;
+    order: 3;
+    margin-top: 10px;
+  }
+  
+  .footer-center a {
+    font-size: 16px !important;
+  }
+  
+  .footer-brand {
+    font-size: 22px !important;
+  }
+}
+
+/* Smaller mobile devices */
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 1.9rem !important;
+  }
+  
+  .intro {
+    font-size: 1rem !important;
+  }
+  
+  .section h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .subtypes h2 {
+    font-size: 1.6rem !important;
+  }
+  
+  .subtype-card {
+    padding: 22px 18px !important;
+  }
 }
