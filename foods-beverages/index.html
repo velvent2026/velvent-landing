@@ -2,26 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Food & Beverages | Velvent</title>
-
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Main CSS (same one you already use) -->
-  <link rel="stylesheet" href="foods.css">
+  
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="foods.css">
 </head>
 
 <body>
 
-  <!-- Background -->
+  <!-- Background Container -->
   <div class="page-bg"></div>
 
   <!-- NAVBAR -->
@@ -31,97 +30,145 @@
         <img src="../images/common/velvent_logo_white.png" alt="Velvent Logo">
       </div>
 
+      <!-- Desktop Navigation -->
       <div class="nav-pill">
         <a href="../">Home</a>
         <a href="../retail-services/">Retail</a>
-        <a class = "active" href="../foods-beverages/">Food & Beverages</a>
+        <a class="active" href="../foods-beverages/">Food & Beverages</a>
         <a href="../cosmetics-beauty/">Cosmetics & Fashion</a>
         <a href="../services/">Services</a>
         <a href="../other-business/">Other Business</a>
       </div>
+      
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        ☰
+      </button>
     </div>
   </nav>
 
-  <!-- CONTENT -->
-  <main class="content">
-
+  <!-- MAIN CONTENT -->
+  <main class="container">
     <h1>Food & Beverages</h1>
 
-    <p class="intro">
-      Food & Beverages (F&B) Industry – Detailed Overview <br />
-      The food and beverages industry supplies essential nutrition and dining
-      experiences. It spans from raw material sourcing to final consumption.
-    </p>
-
-    <!-- EXISTING F&B CONTENT (kept simple & professional) -->
-    <section class="section">
-      <h2>Key Segments</h2>
-      <ul>
-        <li><strong>Packaged foods:</strong> Ready-to-eat meals, snacks, dairy, frozen foods.</li>
-        <li><strong>Beverages:</strong> Soft drinks, juices, tea, coffee, health drinks.</li>
-        <li><strong>Food services:</strong> Restaurants, cafés, QSRs, cloud kitchens.</li>
-      </ul>
+    <section class="overview">
+      <h3>Food & Beverages (F&B) Industry – Detailed Overview</h3>
+      <p>
+        The food and beverages industry supplies essential nutrition and dining
+        experiences. It spans from raw material sourcing to final consumption,
+        catering to diverse consumer needs across retail, hospitality, and food service sectors.
+      </p>
+      <p>
+        This dynamic sector drives economic growth through agricultural linkages,
+        manufacturing, distribution, and retail, while constantly adapting to
+        health trends, sustainability demands, and technological innovations.
+      </p>
     </section>
 
-    <section class="section">
-      <h2>Critical Focus Areas</h2>
-      <ul>
-        <li><strong>Food safety & hygiene:</strong> Compliance with FSSAI and global standards.</li>
-        <li><strong>Quality control:</strong> Ingredient sourcing, storage, shelf-life management.</li>
-        <li><strong>Consumer trends:</strong> Healthy eating, plant-based foods, functional beverages.</li>
-        <li><strong>Operations:</strong> Supply chain efficiency, waste reduction, cost management.</li>
-      </ul>
-    </section>
+    <!-- SUBSECTORS -->
+    <section class="categories">
+      <h2>Business Categories</h2>
 
-    <p class="outro">
-      The F&B sector is vital for public health, lifestyle, and economic stability.
-    </p>
+      <div class="card-grid">
 
-    <!-- NEW FOOD CATEGORIES (FROM YOUR IMAGE) -->
-    <section class="subtypes">
-      <h2>Popular Categories</h2>
-
-      <div class="food-grid">
-
-        <div class="food-card">
-          <span class="food-icon"></span>
-          <h3>Coffee Shops</h3>
-          <p>Cafés focused on coffee, beverages, and light snacks.</p>
+        <div class="card">
+          <h4>Packaged Foods</h4>
+          <p>
+            Ready-to-eat meals, snacks, dairy products, frozen foods,
+            canned goods, and shelf-stable packaged nutrition.
+          </p>
         </div>
 
-        <div class="food-card">
-          <span class="food-icon"></span>
-          <h3>Quick Service</h3>
-          <p>Fast food and takeaway outlets with quick preparation.</p>
+        <div class="card">
+          <h4>Beverages</h4>
+          <p>
+            Soft drinks, juices, tea, coffee, health drinks,
+            functional beverages, alcoholic drinks, and bottled water.
+          </p>
         </div>
 
-        <div class="food-card">
-          <span class="food-icon"></span>
-          <h3>Full Service</h3>
-          <p>Dine-in restaurants offering complete table service.</p>
+        <div class="card">
+          <h4>Food Services</h4>
+          <p>
+            Restaurants, cafés, quick-service restaurants (QSRs),
+            cloud kitchens, catering services, and institutional food providers.
+          </p>
         </div>
 
-        <div class="food-card">
-          <span class="food-icon"></span>
-          <h3>Bars & Breweries</h3>
-          <p>Alcohol-focused venues including pubs and craft breweries.</p>
+        <div class="card">
+          <h4>Food Safety & Compliance</h4>
+          <p>
+            FSSAI and global standards compliance, hygiene audits,
+            quality control systems, and food safety certifications.
+          </p>
         </div>
 
-        <div class="food-card">
-          <span class="food-icon"></span>
-          <h3>Food Trucks</h3>
-          <p>Mobile food businesses serving curated menus.</p>
+        <div class="card">
+          <h4>Supply Chain & Logistics</h4>
+          <p>
+            Cold chain management, warehousing, distribution networks,
+            procurement, and inventory optimization for perishables.
+          </p>
         </div>
 
-        <div class="food-card">
-          <span class="food-icon"></span>
-          <h3>Bakeries</h3>
-          <p>Freshly baked breads, pastries, and desserts.</p>
+        <div class="card">
+          <h4>Health & Wellness Foods</h4>
+          <p>
+            Organic products, plant-based alternatives, functional foods,
+            dietary supplements, and nutrition-focused offerings.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Quick Service & Fast Food</h4>
+          <p>
+            Fast food chains, takeaway outlets, food courts,
+            and grab-and-go concepts with rapid preparation.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Fine Dining & Full Service</h4>
+          <p>
+            Premium restaurants, themed dining, experiential cuisine,
+            and establishments offering complete table service.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Cafés & Coffee Culture</h4>
+          <p>
+            Specialty coffee shops, beverage-focused cafés,
+            bakery-integrated spaces, and social dining environments.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Bars & Breweries</h4>
+          <p>
+            Pubs, bars, microbreweries, cocktail lounges,
+            and venues specializing in alcoholic beverages.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Food Trucks & Mobile Concepts</h4>
+          <p>
+            Mobile food businesses, pop-up restaurants,
+            street food innovations, and event-based catering.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Bakeries & Confectionery</h4>
+          <p>
+            Artisan bakeries, pastry shops, dessert parlors,
+            chocolate makers, and sweet treat specialists.
+          </p>
         </div>
 
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
@@ -142,32 +189,75 @@
         <a href="https://www.instagram.com/velvent2026/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://www.facebook.com/share/1DjKKmw7Fu/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         <a
-  href="https://x.com/Velvent_off"
-  target="_blank"
-  aria-label="X (Twitter)"
-  class="social-link"
->
-  <svg
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M13.0809 10.712L8.29489 4.002C8.23939 3.92404 8.16604 3.86049 8.08098 3.81666C7.99591 3.77282 7.90159 3.74996 7.8059 3.75H5.2799C5.1698 3.75014 5.06186 3.78057 4.9679 3.83797C4.87394 3.89536 4.79759 3.9775 4.7472 4.07539C4.69681 4.17328 4.67432 4.28315 4.6822 4.39296C4.69009 4.50278 4.72804 4.60831 4.79189 4.698L10.9189 13.288M13.0809 10.712L19.2079 19.302C19.2718 19.3917 19.3097 19.4972 19.3176 19.607C19.3255 19.7169 19.303 19.8267 19.2526 19.9246C19.2022 20.0225 19.1258 20.1046 19.0319 20.162C18.9379 20.2194 18.83 20.2499 18.7199 20.25H16.1939C16.0982 20.25 16.0039 20.2272 15.9188 20.1833C15.8337 20.1395 15.7604 20.076 15.7049 19.998L10.9189 13.288M13.0809 10.712L18.9229 3.75M10.9189 13.288L5.0769 20.25"
-      stroke="currentColor"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
-</a>
+          href="https://x.com/Velvent_off"
+          target="_blank"
+          aria-label="X (Twitter)"
+          class="social-link"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.0809 10.712L8.29489 4.002C8.23939 3.92404 8.16604 3.86049 8.08098 3.81666C7.99591 3.77282 7.90159 3.74996 7.8059 3.75H5.2799C5.1698 3.75014 5.06186 3.78057 4.9679 3.83797C4.87394 3.89536 4.79759 3.9775 4.7472 4.07539C4.69681 4.17328 4.67432 4.28315 4.6822 4.39296C4.69009 4.50278 4.72804 4.60831 4.79189 4.698L10.9189 13.288M13.0809 10.712L19.2079 19.302C19.2718 19.3917 19.3097 19.4972 19.3176 19.607C19.3255 19.7169 19.303 19.8267 19.2526 19.9246C19.2022 20.0225 19.1258 20.1046 19.0319 20.162C18.9379 20.2194 18.83 20.2499 18.7199 20.25H16.1939C16.0982 20.25 16.0039 20.2272 15.9188 20.1833C15.8337 20.1395 15.7604 20.076 15.7049 19.998L10.9189 13.288M13.0809 10.712L18.9229 3.75M10.9189 13.288L5.0769 20.25"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
       </div>
 
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const navPill = document.querySelector('.nav-pill');
+      
+      if (mobileMenuToggle && navPill) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          navPill.classList.toggle('active');
+          
+          // Change icon
+          if (navPill.classList.contains('active')) {
+            mobileMenuToggle.innerHTML = '×';
+            mobileMenuToggle.style.fontSize = '32px';
+          } else {
+            mobileMenuToggle.innerHTML = '☰';
+            mobileMenuToggle.style.fontSize = '24px';
+          }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!navPill.contains(e.target) && 
+              !mobileMenuToggle.contains(e.target) &&
+              window.innerWidth <= 768) {
+            navPill.classList.remove('active');
+            mobileMenuToggle.innerHTML = '☰';
+            mobileMenuToggle.style.fontSize = '24px';
+          }
+        });
+        
+        // Close menu when clicking a link
+        navPill.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+              navPill.classList.remove('active');
+              mobileMenuToggle.innerHTML = '☰';
+              mobileMenuToggle.style.fontSize = '24px';
+            }
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
-
