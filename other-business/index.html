@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Services | Velvent</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Other Businesses | Velvent</title>
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -20,22 +19,29 @@
 
 <body>
 
-  <nav class="navbar">
-    <div class="nav-inner">
-      <div class="nav-logo">
-        <img src="../images/common/velvent_logo_white.png" alt="Velvent Logo">
-      </div>
-
-      <div class="nav-pill">
-        <a href="../">Home</a>
-        <a  href="../retail-services/">Retail</a>
-        <a href="../foods-beverages/">Food & Beverages</a>
-        <a href="../cosmetics-beauty/">Cosmetics & Fashion</a>
-        <a href="../services/">Services</a>
-        <a class="active" href="../other-business/">Other Business</a>
-      </div>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <img src="../images/common/velvent_logo_white.png" alt="Velvent Logo">
     </div>
-  </nav>
+
+    <!-- Desktop Navigation -->
+    <div class="nav-pill">
+      <a href="../">Home</a>
+      <a  href="../retail-services/">Retail</a>
+      <a href="../foods-beverages/">Food & Beverages</a>
+      <a href="../cosmetics-beauty/">Cosmetics & Fashion</a>
+      <a href="../services/">Services</a>
+      <a class="active" href="../other-business/">Other Business</a>
+    </div>
+    
+    <!-- Mobile Menu Toggle Button -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      ☰
+    </button>
+  </div>
+</nav>
 
   <!-- MAIN CONTENT -->
   <main class="container">
@@ -181,7 +187,51 @@
 
     </div>
   </footer>
-
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navPill = document.querySelector('.nav-pill');
+    
+    if (mobileMenuToggle && navPill) {
+      mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navPill.classList.toggle('active');
+        
+        // Change icon
+        if (navPill.classList.contains('active')) {
+          mobileMenuToggle.innerHTML = '×';
+          mobileMenuToggle.style.fontSize = '32px';
+        } else {
+          mobileMenuToggle.innerHTML = '☰';
+          mobileMenuToggle.style.fontSize = '24px';
+        }
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!navPill.contains(e.target) && 
+            !mobileMenuToggle.contains(e.target) &&
+            window.innerWidth <= 768) {
+          navPill.classList.remove('active');
+          mobileMenuToggle.innerHTML = '☰';
+          mobileMenuToggle.style.fontSize = '24px';
+        }
+      });
+      
+      // Close menu when clicking a link
+      navPill.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 768) {
+            navPill.classList.remove('active');
+            mobileMenuToggle.innerHTML = '☰';
+            mobileMenuToggle.style.fontSize = '24px';
+          }
+        });
+      });
+    }
+  });
+</script>
 </body>
 
 </html>
+
