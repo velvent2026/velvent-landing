@@ -10,28 +10,35 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 />
-
 </head>
 <body>
 
     <header class="navbar">
-    <div class="nav-inner">
-        <div class="nav-left">
-            <img src="images/common/velvent_logo.png" alt="Velvent" class="logo">
+        <div class="nav-inner">
+            <div class="nav-left">
+                <img src="images/common/velvent_logo.png" alt="Velvent" class="logo">
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="links-container">
+                <a href="#" class="nav-soon" data-soon="Coming soon">Products</a>
+                <a href="pricing/">Pricing</a>
+                <a href="#" class="nav-soon" data-soon="Coming soon">Career</a>
+                <a href="legal/privacy/">Privacy policy</a>
+            </nav>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                ☰
+            </button>
+            
+            <!-- Action Icons -->
+            <div class="actions">
+                <span class="icon"></span>
+                <span class="icon"></span>
+            </div>
         </div>
-        
-        <nav class="links-container">
-  <a href="#" class="nav-soon" data-soon="Coming soon">Products</a>
-  <a href="pricing/">Pricing</a>
-  <a href="#" class="nav-soon" data-soon="Coming soon">Career</a>
-  <a href="legal/privacy/">Privacy policy</a>
-</nav>  
-        <div class="actions">
-            <span class="icon"></span>
-            <span class="icon"></span>
-        </div>
-    </div>
-</header>
+    </header>
 
 <section class="hero">
 
@@ -544,6 +551,7 @@
 <script type="module" src="landing.js"></script>
 </body>
 </html>
+
 
 
 
