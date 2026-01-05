@@ -67,135 +67,83 @@ body {
   opacity: 1;
 }
 
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
 /* CONTENT */
-.content {
-  max-width: 1000px;
+.container {
+  max-width: 1100px;
   margin: 160px auto 140px;
   padding: 0 20px;
 }
 
-.content h1 {
+.container h1 {
   font-size: 42px;
-  margin-bottom: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
 
-.intro {
-  color: #d1d1d1;
-  line-height: 1.7;
-  margin-bottom: 42px;
+/* OVERVIEW */
+.overview {
+  max-width: 800px;
+  margin-bottom: 60px;
 }
 
-/* EXISTING SECTIONS */
-.section {
-  margin-bottom: 36px;
-}
-
-.section h2 {
+.overview h3 {
   font-size: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
-.section ul {
-  margin-left: 18px;
-}
-
-.section li {
-  color: #dcdcdc;
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-
-.outro {
+.overview p {
   color: #cfcfcf;
-  margin-top: 30px;
-  font-style: italic;
-}
-
-/* SUB TYPES */
-/* FOOD SUB TYPES */
-.food-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 26px;
-}
-
-.food-card {
-  padding: 26px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.14);
-  backdrop-filter: blur(18px);
-  transition: 
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease,
-    background 0.35s ease;
-}
-
-.food-card h3 {
-  font-size: 17px;
-  margin-bottom: 12px;
-}
-
-.food-card p {
-  font-size: 14px;
-  line-height: 2.0;
-  color: #d6d6d6;
-}
-
-/* HOVER EFFECT */
-.food-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.35);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
-}
-
-/* ICON */
-.food-icon {
-  font-size: 26px;
-  display: inline-block;
+  line-height: 1.6;
   margin-bottom: 14px;
 }
 
+/* CATEGORIES */
+.categories h2 {
+  font-size: 26px;
+  margin-bottom: 28px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
 
 /* CARD */
-.subtype-card {
-  padding: 26px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.14);
-  backdrop-filter: blur(18px);
-  transition: 
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease,
-    background 0.35s ease;
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 22px;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.subtype-card h3 {
-  font-size: 17px;
-  margin-bottom: 12px;
+.card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.subtype-card p {
+.card h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card p {
   font-size: 14px;
-  line-height: 1.6;
-  color: #d6d6d6;
-}
-
-/* SUPER INTERACTIVE HOVER */
-.subtype-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.35);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
-}
-.subtypes {
-  margin-top: 70px;
-}
-.subtypes h2 {
-  margin-bottom: 28px;
+  color: #cfcfcf;
+  line-height: 1.5;
 }
 
 /* FOOTER */
@@ -215,7 +163,7 @@ body {
 }
 
 .footer-brand {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -248,17 +196,16 @@ body {
 .footer-socials i:hover {
   color: #fff;
 }
+
 .footer-socials a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  width: 36px;          /* 👈 clickable area */
+  width: 36px;
   height: 36px;
   text-decoration: none;
   cursor: pointer;
   color: rgba(255,255,255,0.75);
-
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
@@ -270,4 +217,209 @@ body {
 /* THIS FIXES THE CLICK ISSUE */
 .footer-socials svg {
   pointer-events: none;
+}
+
+/* ===========================================
+   MOBILE RESPONSIVE FIXES - ADDED AT THE END
+=========================================== */
+
+@media (max-width: 768px) {
+  
+  /* ---------------- NAVBAR MOBILE ---------------- */
+  .navbar {
+    padding: 15px 20px !important;
+    top: 0 !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+  }
+  
+  .nav-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: relative !important;
+  }
+  
+  .nav-logo img {
+    height: 35px !important;
+  }
+  
+  /* Hide desktop nav-pill by default on mobile */
+  .nav-pill {
+    display: none !important;
+    position: fixed !important;
+    top: 70px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+    background: rgba(15, 17, 19, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    flex-direction: column !important;
+    padding: 25px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
+    z-index: 1001 !important;
+    gap: 0 !important;
+  }
+  
+  .nav-pill.active {
+    display: flex !important;
+  }
+  
+  .nav-pill a {
+    padding: 12px 0 !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    opacity: 1 !important;
+    width: 100% !important;
+  }
+  
+  .nav-pill a:last-child {
+    border-bottom: none !important;
+  }
+  
+  /* Show mobile menu button on mobile */
+  .mobile-menu-toggle {
+    display: block !important;
+  }
+  
+  /* ---------------- MAIN CONTENT MOBILE ---------------- */
+  .container {
+    margin: 120px auto 80px !important;
+    padding: 0 20px !important;
+    max-width: 100% !important;
+  }
+  
+  .container h1 {
+    font-size: 2.2rem !important;
+    text-align: center !important;
+    margin-bottom: 25px !important;
+  }
+  
+  /* ---------------- OVERVIEW SECTION MOBILE ---------------- */
+  .overview {
+    margin-bottom: 40px !important;
+    padding: 0 10px !important;
+  }
+  
+  .overview h3 {
+    font-size: 1.6rem !important;
+    text-align: center !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .overview p {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 15px !important;
+    text-align: center !important;
+  }
+  
+  /* ---------------- CATEGORIES SECTION MOBILE ---------------- */
+  .categories {
+    padding: 0 !important;
+  }
+  
+  .categories h2 {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+    margin-bottom: 30px !important;
+  }
+  
+  /* Grid - single column on mobile */
+  .card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  /* Cards mobile styling */
+  .card {
+    padding: 25px 20px !important;
+    text-align: center !important;
+  }
+  
+  .card h4 {
+    font-size: 1.4rem !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .card p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Remove hover effects on mobile */
+  .card:hover {
+    transform: none !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
+  
+  /* ---------------- FOOTER MOBILE ---------------- */
+  .site-footer {
+    padding: 40px 20px !important;
+  }
+  
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .footer-center {
+    flex-direction: column !important;
+    gap: 15px !important;
+    order: 2;
+  }
+  
+  .footer-left {
+    order: 1;
+  }
+  
+  .footer-socials {
+    justify-self: center !important;
+    order: 3;
+    margin-top: 10px;
+  }
+  
+  .footer-center a {
+    font-size: 16px !important;
+  }
+  
+  .footer-brand {
+    font-size: 22px !important;
+  }
+}
+
+/* Smaller mobile devices */
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 1.9rem !important;
+  }
+  
+  .overview h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  .overview p {
+    font-size: 1rem !important;
+  }
+  
+  .categories h2 {
+    font-size: 1.6rem !important;
+  }
+  
+  .card {
+    padding: 22px 18px !important;
+  }
+  
+  .card h4 {
+    font-size: 1.3rem !important;
+  }
 }
