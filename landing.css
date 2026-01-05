@@ -839,7 +839,6 @@ html, body {
 }
 
 /* ================= HERO ================= */
-
 .hero {
   position: relative;
   width: 100%;
@@ -888,11 +887,12 @@ html, body {
 .hero-content {
   position: relative;
   z-index: 3;
-  max-width: 6400px;
-  margin-left: 6%;
+  max-width: 640px; /* ← CHANGE from 6400px to 640px or your desired max width */
   color: #ffffff;
+  text-align: center; /* ← CENTERS the text */
+  margin: 0 auto; /* ← CENTERS the container */
+  width: 100%;
 }
-
 /* Optional polish */
 .hero-content h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
@@ -970,13 +970,17 @@ html, body {
   }
 
   /* ---------------- HERO MOBILE ---------------- */
-  .hero {
-    min-height: 90vh;
-    padding: 100px 20px 60px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-  }
+ .hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ← ADD THIS to center vertically/horizontally */
+  padding: 0 6%;
+}
 
   .hero::after {
     background: linear-gradient(
@@ -992,18 +996,21 @@ html, body {
     width: 100%;
     max-width: 100%;
   }
-
-  .hero-content h1 {
-    font-size: 2.2rem;
-    line-height: 1.2;
-    margin-bottom: 20px;
-  }
-
-  .hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    padding: 0 10px;
-  }
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-align: center; /* ← ADD THIS to ensure h1 is centered */
+}
+.hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  text-align: center; /* ← ADD THIS to ensure paragraph is centered */
+  max-width: 100%; /* ← ADD THIS */
+  margin-left: auto; /* ← ADD THIS */
+  margin-right: auto; /* ← ADD THIS */
+}
 
   /* ---------------- CTA BUTTONS MOBILE ---------------- */
   .cta-group {
@@ -1139,3 +1146,4 @@ html, body {
     font-size: 1.6rem;
   }
 }
+
