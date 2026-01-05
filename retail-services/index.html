@@ -26,22 +26,29 @@
   <div class="page-bg"></div>
 
   <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <div class="nav-logo">
-        <img src="../images/common/velvent_logo_white.png" alt="Velvent Logo">
-      </div>
-
-      <div class="nav-pill">
-        <a href="../">Home</a>
-        <a class="active" href="../retail-services/">Retail</a>
-        <a href="../foods-beverages/">Food & Beverages</a>
-        <a href="../cosmetics-beauty/">Cosmetics & Fashion</a>
-        <a href="../services/">Services</a>
-        <a href="../other-business/">Other Business</a>
-      </div>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <img src="../images/common/velvent_logo_white.png" alt="Velvent Logo">
     </div>
-  </nav>
+
+    <!-- Desktop Navigation -->
+    <div class="nav-pill">
+      <a href="../">Home</a>
+      <a class="active" href="../retail-services/">Retail</a>
+      <a href="../foods-beverages/">Food & Beverages</a>
+      <a href="../cosmetics-beauty/">Cosmetics & Fashion</a>
+      <a href="../services/">Services</a>
+      <a href="../other-business/">Other Business</a>
+    </div>
+    
+    <!-- Mobile Menu Toggle Button -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      ☰
+    </button>
+  </div>
+</nav>
 
   <!-- CONTENT -->
   <main class="content">
@@ -149,8 +156,52 @@
 
     </div>
   </footer>
-
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navPill = document.querySelector('.nav-pill');
+    
+    if (mobileMenuToggle && navPill) {
+      mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navPill.classList.toggle('active');
+        
+        // Change icon
+        if (navPill.classList.contains('active')) {
+          mobileMenuToggle.innerHTML = '×';
+          mobileMenuToggle.style.fontSize = '32px';
+        } else {
+          mobileMenuToggle.innerHTML = '☰';
+          mobileMenuToggle.style.fontSize = '24px';
+        }
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!navPill.contains(e.target) && 
+            !mobileMenuToggle.contains(e.target) &&
+            window.innerWidth <= 768) {
+          navPill.classList.remove('active');
+          mobileMenuToggle.innerHTML = '☰';
+          mobileMenuToggle.style.fontSize = '24px';
+        }
+      });
+      
+      // Close menu when clicking a link
+      navPill.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 768) {
+            navPill.classList.remove('active');
+            mobileMenuToggle.innerHTML = '☰';
+            mobileMenuToggle.style.fontSize = '24px';
+          }
+        });
+      });
+    }
+  });
+</script>
 </body>
 </html>
+
 
 
