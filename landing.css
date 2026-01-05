@@ -895,15 +895,14 @@ html, body {
 }
 /* Optional polish */
 .hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem); /* ← Slightly larger font */
   line-height: 1.1;
   margin-bottom: 1rem;
   text-align: center;
-  width: 90%; /* ← ADD this to make it take more width */
-  max-width: 1100px; /* ← Set a very large max-width */
+  max-width: none; /* ← REMOVE or set to none */
   margin-left: auto;
   margin-right: auto;
-  font-weight: 600;
+  font-weight: 700; /* Adjust weight as needed */
 }
 
 .hero-content p {
@@ -1152,6 +1151,7 @@ html, body {
     font-size: 1.6rem;
   }
 }
+
 
 
 
