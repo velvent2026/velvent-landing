@@ -887,7 +887,7 @@ html, body {
 .hero-content {
   position: relative;
   z-index: 3;
-  max-width: 640px; /* ← CHANGE from 6400px to 640px or your desired max width */
+  max-width: 800px; /* ← CHANGE from 6400px to 640px or your desired max width */
   color: #ffffff;
   text-align: center; /* ← CENTERS the text */
   margin: 0 auto; /* ← CENTERS the container */
@@ -1146,4 +1146,5 @@ html, body {
     font-size: 1.6rem;
   }
 }
+
 
