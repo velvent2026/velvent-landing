@@ -124,6 +124,7 @@ body {
 .nav-pill a:hover::after {
   width: 100%;
 }
+/* Mobile Menu Toggle Button - FIXED */
 .mobile-menu-toggle {
     display: none; /* Hide by default */
     background: rgba(255, 255, 255, 0.1);
@@ -138,23 +139,29 @@ body {
     line-height: 1;
     height: 44px;
     width: 44px;
-    display: flex;
+    /* REMOVE this line: display: flex; */
     align-items: center;
     justify-content: center;
 }
 
+.menu-icon {
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-toggle.active .menu-icon {
+    transform: rotate(90deg);
+}
+
+/* Only show on mobile */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex; /* Show only on mobile */
+    }
+}
 .mobile-menu-toggle:hover {
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.3);
   transform: scale(1.05);
-}
-
-.menu-icon {
-  transition: transform 0.3s ease;
-}
-
-.mobile-menu-toggle.active .menu-icon {
-  transform: rotate(90deg);
 }
 /* ================= HERO ================= */
 
@@ -841,4 +848,5 @@ body {
 body.menu-open {
   overflow: hidden;
 }
+
 
