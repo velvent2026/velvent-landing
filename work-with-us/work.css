@@ -40,7 +40,7 @@ body {
   border-radius: 20px;
 }
 
-/* ================= FIXED TOP NAVIGATION ================= */
+/* ================= HEADER ================= */
 
 .top-nav {
   position: fixed;
@@ -154,7 +154,6 @@ body {
 .mobile-menu-toggle.active .menu-icon {
   transform: rotate(90deg);
 }
-
 /* ================= HERO ================= */
 
 .hero {
@@ -547,9 +546,6 @@ select option {
 .glass-select.selected .selected-value {
   color: #ffffff;
 }
-
-/* ================= DISCORD POPUP ================= */
-
 .discord-popup {
   position: fixed;
   left: 50%;
@@ -585,9 +581,6 @@ select option {
   font-size: 26px;
   font-weight: 700;
   margin: 0 0 6px;
-  white-space: nowrap;
-  line-height: 1;
-  letter-spacing: -0.3px;
 }
 
 .discord-popup p {
@@ -606,11 +599,6 @@ select option {
   font-size: 15px;
   font-weight: 600;
   height: fit-content;
-  text-decoration: none;
-}
-
-.discord-popup .btn:hover {
-  text-decoration: none;
 }
 
 /* ANIMATION */
@@ -625,10 +613,6 @@ select option {
   }
 }
 
-.discord-popup a {
-  text-decoration: none;
-}
-
 /* MOBILE FIX */
 @media (max-width: 600px) {
   .discord-popup {
@@ -640,9 +624,30 @@ select option {
     max-width: none;
   }
 }
+.discord-popup {
+  display: none;
+}
+.discord-popup a {
+  text-decoration: none;
+}
+.discord-popup .btn {
+  text-decoration: none;
+}
+.discord-popup .btn:hover {
+  text-decoration: none;
+}
 
-/* ================= MOBILE RESPONSIVE STYLES ================= */
+.discord-popup h2 {
+  white-space: nowrap;
+}
+.discord-popup h2 {
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: -0.3px;
+}
+/* ================= MOBILE NAVIGATION FIXES ================= */
 
+/* Mobile Menu Toggle Button */
 @media (max-width: 1024px) {
   .top-nav {
     padding: 0 30px;
