@@ -16,18 +16,24 @@
     <img src="../images/common/velvent_logo_white.png" class="nav-logo" />
   </div>
 
-  <div class="nav-pill glass">
+  <!-- Desktop Navigation -->
+  <div class="nav-pill glass" id="navPill">
     <a href="../">Home</a>
     <a href="../pricing/">Pricing</a>
     <a href="../about/">About Us</a>
   </div>
+
+  <!-- Mobile Menu Toggle Button -->
+  <button class="mobile-menu-toggle" id="mobileMenuToggle">
+    ☰
+  </button>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
   <h1>Build Velvent.<br>Let's collaborate and work together.</h1>
   <p>
-    We’re forming a real organization to build Velvent from the ground up.
+    We're forming a real organization to build Velvent from the ground up.
     Consider this an invitation to co-create something meaningful.
   </p>
 
@@ -77,7 +83,7 @@
 
 <!-- ================= ROLES ================= -->
 <section class="section">
-  <h2>Who we’re looking for</h2>
+  <h2>Who we're looking for</h2>
 
   <div class="role-card glass">
     <i data-lucide="code-2"></i>
@@ -175,7 +181,7 @@
 
 <!-- ================= DISCORD POPUP ================= -->
 <div id="discordPopup" class="discord-popup glass">
-  <h2>You’re in!</h2>
+  <h2>You're in!</h2>
   <p>
     Thanks for your interest in building Velvent.
     Join our Discord server to connect with the team.
@@ -198,6 +204,48 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   lucide.createIcons();
+
+  // Mobile Navigation
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const navPill = document.getElementById('navPill');
+  
+  if (mobileMenuToggle && navPill) {
+    mobileMenuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      navPill.classList.toggle('active');
+      
+      // Change icon
+      if (navPill.classList.contains('active')) {
+        mobileMenuToggle.innerHTML = '×';
+        mobileMenuToggle.style.fontSize = '32px';
+      } else {
+        mobileMenuToggle.innerHTML = '☰';
+        mobileMenuToggle.style.fontSize = '24px';
+      }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!navPill.contains(e.target) && 
+          !mobileMenuToggle.contains(e.target) &&
+          window.innerWidth <= 768) {
+        navPill.classList.remove('active');
+        mobileMenuToggle.innerHTML = '☰';
+        mobileMenuToggle.style.fontSize = '24px';
+      }
+    });
+    
+    // Close menu when clicking a link
+    navPill.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          navPill.classList.remove('active');
+          mobileMenuToggle.innerHTML = '☰';
+          mobileMenuToggle.style.fontSize = '24px';
+        }
+      });
+    });
+  }
 
   // Scroll to form
   document.getElementById("joinCoreBtn").addEventListener("click", () => {
@@ -256,5 +304,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
-
