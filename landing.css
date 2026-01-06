@@ -535,7 +535,77 @@ html, body {
   color: #ffffff;
   transform: translateY(-2px);
 }
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 0 50px;
+  }
+  
+  .footer-inner {
+    flex-direction: column;
+    align-items: center; /* Changed from flex-start to center */
+    gap: 40px;
+    padding: 0 20px;
+    text-align: center; /* Added to center text */
+  }
+  
+  /* Center the brand section on mobile */
+  .footer-brand {
+    align-items: center; /* Override the flex-start from desktop */
+    text-align: center;
+    max-width: 100%; /* Allow full width on mobile */
+  }
+  
+  .footer-right {
+    align-items: center; /* Changed from flex-start to center */
+    width: 100%;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    align-items: center; /* Center the links */
+  }
+  
+  .footer-col {
+    width: auto; /* Changed from 100% to auto for better centering */
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-socials {
+    align-self: center; /* Changed from flex-start to center */
+  }
+  
+  /* Make links stack better */
+  .footer-col h4 {
+    margin-bottom: 5px;
+  }
+  
+  .footer-col a {
+    display: block;
+    padding: 5px 0;
+  }
+}
 
+@media (max-width: 480px) {
+  .footer {
+    padding: 50px 0 40px;
+  }
+  
+  .footer-inner {
+    gap: 35px;
+  }
+  
+  .footer-links {
+    gap: 25px;
+  }
+  
+  .footer-brand p {
+    font-size: 13px; /* Slightly smaller text on very small screens */
+  }
+}
 /* CTA STRIP */
 .cta-strip {
   margin: 140px auto 120px;
@@ -1276,6 +1346,7 @@ html, body {
     font-size: 1.6rem;
   }
 }
+
 
 
 
