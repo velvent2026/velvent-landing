@@ -70,20 +70,24 @@ body {
   transform: translate(-50%, -50%);
 
   display: flex;
-  gap: 26px;
-  padding: 10px 28px;
+  gap: 20px; /* Reduced from 26px */
+  padding: 10px 22px; /* Reduced from 28px */
   pointer-events: auto;
+  
+  /* Prevent wrapping */
+  white-space: nowrap;
+  flex-wrap: nowrap;
 }
 
 /* nav links */
 .nav-pill a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px; /* Slightly smaller font */
   font-weight: 500;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
-
 .nav-pill a:hover {
   color: var(--text);
 }
@@ -159,3 +163,4 @@ body {
     padding: 8px 20px;
   }
 }
+
