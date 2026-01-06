@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Services | Velvent</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome (REQUIRED for Insta & LinkedIn) -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -20,101 +20,152 @@
 
 <body>
 
- <nav class="navbar">
+  <!-- Background Container -->
+  <div class="page-bg"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
     <div class="nav-inner">
       <div class="nav-logo">
         <img src="../images/common/velvent_logo_white.png" alt="Velvent Logo">
       </div>
 
-     <div class="nav-pill">
+      <!-- Desktop Navigation -->
+      <div class="nav-pill">
         <a href="../">Home</a>
-        <a class="active" href="../retail-services/">Retail</a>
+        <a href="../retail-services/">Retail</a>
         <a href="../foods-beverages/">Food & Beverages</a>
         <a href="../cosmetics-beauty/">Cosmetics & Fashion</a>
-        <a href="../services/">Services</a>
+        <a class="active" href="../services/">Services</a>
         <a href="../other-business/">Other Business</a>
       </div>
+      
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        ☰
+      </button>
     </div>
   </nav>
 
   <!-- MAIN CONTENT -->
   <main class="container">
     <h1>Services</h1>
-    <p class="subtitle">
-      The services sector delivers value through expertise, support, and customer interactions.
-      It enhances convenience, efficiency, and long-term customer trust.
-    </p>
 
-    <!-- OVERVIEW -->
     <section class="overview">
       <h3>Services Sector – Detailed Overview</h3>
-      <ul>
-        <li><strong>Service nature:</strong> Expertise-driven and customer-focused.</li>
-        <li><strong>Delivery models:</strong> On-site, remote, mobile, and subscription-based.</li>
-        <li><strong>Technology role:</strong> Scheduling, CRM, automation, and digital tools.</li>
-        <li><strong>Customer focus:</strong> Reliability, quality, and relationship-building.</li>
-      </ul>
+      <p>
+        The services sector delivers value through expertise, support, and customer interactions.
+        It enhances convenience, efficiency, and long-term customer trust across various domains.
+      </p>
+      <p>
+        From professional consulting to daily conveniences, services play a crucial role in modern
+        economies by enabling productivity, solving problems, and creating meaningful customer
+        experiences through knowledge-based and skill-oriented offerings.
+      </p>
     </section>
 
-    <!-- CATEGORIES -->
+    <!-- SUBSECTORS -->
     <section class="categories">
       <h2>Service Categories</h2>
 
       <div class="card-grid">
+
         <div class="card">
-          <h4>Home & Commercial</h4>
-          <p>Maintenance and support services for homes and commercial spaces.</p>
+          <h4>Professional Services</h4>
+          <p>
+            Legal, financial, consulting, IT services,
+            business advisory, and corporate solutions.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Healthcare & Wellness</h4>
+          <p>
+            Medical services, therapy, wellness programs,
+            fitness training, and healthcare support.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Home & Commercial Services</h4>
+          <p>
+            Maintenance, repairs, installation,
+            and support services for residential and commercial spaces.
+          </p>
         </div>
 
         <div class="card">
           <h4>Automotive Services</h4>
-          <p>Vehicle servicing, repairs, diagnostics, and assistance.</p>
+          <p>
+            Vehicle servicing, repairs, diagnostics,
+            detailing, and automotive assistance.
+          </p>
         </div>
 
         <div class="card">
-          <h4>Transportation</h4>
-          <p>Mobility, delivery, logistics, and transport solutions.</p>
+          <h4>Transportation & Logistics</h4>
+          <p>
+            Mobility solutions, delivery services,
+            logistics management, and transport coordination.
+          </p>
         </div>
 
         <div class="card">
-          <h4>Contractors & Specialists</h4>
-          <p>Skilled professionals offering technical and trade services.</p>
+          <h4>Cleaning & Sanitation</h4>
+          <p>
+            Residential cleaning, commercial sanitation,
+            specialized cleaning, and hygiene services.
+          </p>
         </div>
 
         <div class="card">
-          <h4>Professional Services</h4>
-          <p>Legal, financial, consulting, IT, and advisory services.</p>
+          <h4>Education & Training</h4>
+          <p>
+            Tutoring, coaching, skill development,
+            corporate training, and educational services.
+          </p>
         </div>
 
         <div class="card">
-          <h4>Pet Services</h4>
-          <p>Grooming, care, training, and pet-support solutions.</p>
+          <h4>Contractors & Technical Services</h4>
+          <p>
+            Skilled trades, construction services,
+            technical specialists, and project-based work.
+          </p>
         </div>
 
         <div class="card">
-          <h4>Organizations & Nonprofits</h4>
-          <p>Community-driven and social impact organizations.</p>
+          <h4>Pet Care Services</h4>
+          <p>
+            Pet grooming, training, boarding,
+            veterinary assistance, and animal care.
+          </p>
         </div>
 
         <div class="card">
-          <h4>Cleaning Services</h4>
-          <p>Residential, commercial, and specialized cleaning solutions.</p>
+          <h4>Landscaping & Outdoor Services</h4>
+          <p>
+            Garden maintenance, landscaping,
+            outdoor design, and property beautification.
+          </p>
         </div>
 
         <div class="card">
-          <h4>Landscaping & Outdoors</h4>
-          <p>Outdoor maintenance, gardening, and landscaping services.</p>
+          <h4>Recreation & Leisure</h4>
+          <p>
+            Entertainment services, event planning,
+            leisure activities, and experience creation.
+          </p>
         </div>
 
         <div class="card">
-          <h4>Recreation</h4>
-          <p>Leisure, entertainment, and experience-based services.</p>
+          <h4>Technology & Digital Services</h4>
+          <p>
+            IT support, cybersecurity, digital marketing,
+            software development, and tech consulting.
+          </p>
         </div>
 
-        <div class="card">
-          <h4>Healthcare</h4>
-          <p>Medical, wellness, therapy, and healthcare services.</p>
-        </div>
       </div>
     </section>
   </main>
@@ -137,32 +188,75 @@
         <a href="https://www.instagram.com/velvent2026/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://www.facebook.com/share/1DjKKmw7Fu/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         <a
-  href="https://x.com/Velvent_off"
-  target="_blank"
-  aria-label="X (Twitter)"
-  class="social-link"
->
-  <svg
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M13.0809 10.712L8.29489 4.002C8.23939 3.92404 8.16604 3.86049 8.08098 3.81666C7.99591 3.77282 7.90159 3.74996 7.8059 3.75H5.2799C5.1698 3.75014 5.06186 3.78057 4.9679 3.83797C4.87394 3.89536 4.79759 3.9775 4.7472 4.07539C4.69681 4.17328 4.67432 4.28315 4.6822 4.39296C4.69009 4.50278 4.72804 4.60831 4.79189 4.698L10.9189 13.288M13.0809 10.712L19.2079 19.302C19.2718 19.3917 19.3097 19.4972 19.3176 19.607C19.3255 19.7169 19.303 19.8267 19.2526 19.9246C19.2022 20.0225 19.1258 20.1046 19.0319 20.162C18.9379 20.2194 18.83 20.2499 18.7199 20.25H16.1939C16.0982 20.25 16.0039 20.2272 15.9188 20.1833C15.8337 20.1395 15.7604 20.076 15.7049 19.998L10.9189 13.288M13.0809 10.712L18.9229 3.75M10.9189 13.288L5.0769 20.25"
-      stroke="currentColor"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
-</a>
+          href="https://x.com/Velvent_off"
+          target="_blank"
+          aria-label="X (Twitter)"
+          class="social-link"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.0809 10.712L8.29489 4.002C8.23939 3.92404 8.16604 3.86049 8.08098 3.81666C7.99591 3.77282 7.90159 3.74996 7.8059 3.75H5.2799C5.1698 3.75014 5.06186 3.78057 4.9679 3.83797C4.87394 3.89536 4.79759 3.9775 4.7472 4.07539C4.69681 4.17328 4.67432 4.28315 4.6822 4.39296C4.69009 4.50278 4.72804 4.60831 4.79189 4.698L10.9189 13.288M13.0809 10.712L19.2079 19.302C19.2718 19.3917 19.3097 19.4972 19.3176 19.607C19.3255 19.7169 19.303 19.8267 19.2526 19.9246C19.2022 20.0225 19.1258 20.1046 19.0319 20.162C18.9379 20.2194 18.83 20.2499 18.7199 20.25H16.1939C16.0982 20.25 16.0039 20.2272 15.9188 20.1833C15.8337 20.1395 15.7604 20.076 15.7049 19.998L10.9189 13.288M13.0809 10.712L18.9229 3.75M10.9189 13.288L5.0769 20.25"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
       </div>
 
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const navPill = document.querySelector('.nav-pill');
+      
+      if (mobileMenuToggle && navPill) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          navPill.classList.toggle('active');
+          
+          // Change icon
+          if (navPill.classList.contains('active')) {
+            mobileMenuToggle.innerHTML = '×';
+            mobileMenuToggle.style.fontSize = '32px';
+          } else {
+            mobileMenuToggle.innerHTML = '☰';
+            mobileMenuToggle.style.fontSize = '24px';
+          }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!navPill.contains(e.target) && 
+              !mobileMenuToggle.contains(e.target) &&
+              window.innerWidth <= 768) {
+            navPill.classList.remove('active');
+            mobileMenuToggle.innerHTML = '☰';
+            mobileMenuToggle.style.fontSize = '24px';
+          }
+        });
+        
+        // Close menu when clicking a link
+        navPill.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+              navPill.classList.remove('active');
+              mobileMenuToggle.innerHTML = '☰';
+              mobileMenuToggle.style.fontSize = '24px';
+            }
+          });
+        });
+      }
+    });
+  </script>
 </body>
-
 </html>
