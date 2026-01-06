@@ -7,23 +7,30 @@
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="privacy.css" />
 </head>
 <body>
 
-  <!-- TOP NAV (EXACT STYLE – DO NOT TOUCH STRUCTURE) -->
+  <!-- TOP NAV -->
   <header class="top-nav">
-  <div class="nav-logo-wrap">
-    <img src="../../images/common/velvent_logo_white.png" class="nav-logo" />
-  </div>
+    <div class="nav-logo-wrap">
+      <img src="../../images/common/velvent_logo_white.png" class="nav-logo" />
+    </div>
 
-  <div class="nav-pill glass">
-    <a href="../../">Home</a>
-    <a href="../../pricing/">Pricing</a>
-    <a href="../../about/">About Us</a>
-  </div>
-</header>
+    <div class="nav-pill glass">
+      <a href="../../">Home</a>
+      <a href="../../pricing/">Pricing</a>
+      <a href="../../about/">About Us</a>
+    </div>
+
+    <!-- Add this hamburger menu button -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      <i class="fas fa-bars menu-icon"></i>
+    </button>
+  </header>
 
   <!-- PAGE CONTENT -->
   <main class="policy-wrapper">
@@ -86,6 +93,73 @@
     </section>
   </main>
 
+  <!-- JavaScript for mobile menu -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const navPill = document.querySelector('.nav-pill');
+      
+      if (mobileMenuToggle && navPill) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const isActive = navPill.classList.toggle('active');
+          this.classList.toggle('active', isActive);
+          
+          // Change icon
+          const menuIcon = this.querySelector('.menu-icon');
+          if (isActive) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+            document.body.classList.add('menu-open');
+          } else {
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+            document.body.classList.remove('menu-open');
+          }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!navPill.contains(e.target) && 
+              !mobileMenuToggle.contains(e.target) &&
+              window.innerWidth <= 768) {
+            navPill.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+            document.body.classList.remove('menu-open');
+          }
+        });
+        
+        // Close menu when clicking a link
+        navPill.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+              navPill.classList.remove('active');
+              mobileMenuToggle.classList.remove('active');
+              const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
+              menuIcon.classList.remove('fa-times');
+              menuIcon.classList.add('fa-bars');
+              document.body.classList.remove('menu-open');
+            }
+          });
+        });
+        
+        // Close menu on window resize
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 768) {
+            navPill.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+            document.body.classList.remove('menu-open');
+          }
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>
-
