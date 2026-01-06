@@ -423,3 +423,38 @@ h1 {
     font-size: 1.3rem;
   }
 }
+/* ===== FIX FOR WHITE BOX ON MOBILE SCROLL ===== */
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  background-color: #000; /* Black fallback */
+}
+
+.page-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.88)),
+    url("../images/common/hero_bg.jpeg") center/cover no-repeat;
+  background-attachment: scroll;
+}
+
+/* Fix for iOS momentum scrolling */
+@media (max-width: 768px) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .page-bg {
+    height: 100vh;
+    height: -webkit-fill-available;
+    background-attachment: local;
+  }
+}
