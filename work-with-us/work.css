@@ -579,3 +579,144 @@ select option {
   line-height: 1;
   letter-spacing: -0.3px;
 }
+/* ================= MOBILE NAVIGATION FIXES ================= */
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  /* NAVBAR MOBILE */
+  .top-nav {
+    padding: 15px 20px;
+    top: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    height: 70px;
+    pointer-events: auto;
+  }
+  
+  .nav-logo-wrap {
+    position: relative;
+    left: 0;
+    transform: translateY(0);
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-logo {
+    height: 35px;
+  }
+  
+  /* Hide desktop nav-pill by default on mobile */
+  .nav-pill {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(15, 17, 19, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    gap: 0;
+    pointer-events: auto;
+  }
+  
+  .nav-pill.active {
+    display: flex;
+  }
+  
+  .nav-pill a {
+    padding: 12px 0;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 1;
+    width: 100%;
+    color: #ffffff;
+  }
+  
+  .nav-pill a:last-child {
+    border-bottom: none;
+  }
+  
+  /* Show mobile menu button on mobile */
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  /* Adjust hero section for mobile */
+  .hero {
+    padding: 140px 20px 80px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
+
+/* Smaller mobile devices */
+@media (max-width: 480px) {
+  .top-nav {
+    padding: 12px 15px;
+  }
+  
+  .nav-logo {
+    height: 30px;
+  }
+  
+  .mobile-menu-toggle {
+    right: 15px;
+    font-size: 22px;
+  }
+  
+  .hero h1 {
+    font-size: 28px;
+  }
+  
+  .hero p {
+    font-size: 15px;
+  }
+}
+
+/* ================= FIX FOR WHITE BOX ON MOBILE SCROLL ===== */
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
