@@ -19,7 +19,6 @@ body {
   color: var(--text);
   min-height: 100vh;
 
-  /* 🔥 smooth + non-laggy */
   background:
     linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.85)),
     url("../../images/common/hero_bg.jpeg") center / cover no-repeat;
@@ -46,7 +45,6 @@ body {
   width: 100%;
   height: 64px;
   z-index: 100;
-  pointer-events: none;
 }
 
 /* logo (left only, does not affect center) */
@@ -55,14 +53,13 @@ body {
   left: 32px;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: auto;
 }
 
 .nav-logo {
   height: 50px;
 }
 
-/* 🔥 TRUE CENTERED PILL */
+/* TRUE CENTERED PILL */
 .nav-pill {
   position: absolute;
   left: 50%;
@@ -70,11 +67,8 @@ body {
   transform: translate(-50%, -50%);
 
   display: flex;
-  gap: 20px; /* Reduced from 26px */
-  padding: 10px 22px; /* Reduced from 28px */
-  pointer-events: auto;
-  
-  /* Prevent wrapping */
+  gap: 26px;
+  padding: 10px 28px;
   white-space: nowrap;
   flex-wrap: nowrap;
 }
@@ -83,13 +77,47 @@ body {
 .nav-pill a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 13px; /* Slightly smaller font */
+  font-size: 14px;
   font-weight: 500;
   transition: color 0.2s ease;
   white-space: nowrap;
 }
+
 .nav-pill a:hover {
   color: var(--text);
+}
+
+/* ================= MOBILE MENU TOGGLE ================= */
+.mobile-menu-toggle {
+  display: none; /* Hidden by default */
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+  z-index: 101;
+  line-height: 1;
+  height: 44px;
+  width: 44px;
+  
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.05);
 }
 
 /* ================= CONTENT WRAPPER ================= */
@@ -152,51 +180,26 @@ body {
   color: #e5e7eb;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .policy-card {
-    padding: 32px;
-  }
+.highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
 
+/* ================= RESPONSIVE ================= */
+
+/* For screens between 900px and 768px - adjust nav spacing */
+@media (max-width: 900px) {
   .nav-pill {
     gap: 18px;
-    padding: 8px 20px;
+    padding: 10px 20px;
+  }
+  
+  .nav-pill a {
+    font-size: 13px;
   }
 }
 
-/* ================= MOBILE MENU TOGGLE ================= */
-.mobile-menu-toggle {
-  display: none; /* Hidden by default on desktop */
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 10px 14px;
-  transition: all 0.3s ease;
-  z-index: 101;
-  line-height: 1;
-  height: 44px;
-  width: 44px;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mobile-menu-toggle:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-50%) scale(1.05);
-}
-
-/* ================= MOBILE RESPONSIVE STYLES ================= */
+/* MOBILE STYLES (768px and below) */
 @media (max-width: 768px) {
   /* Show hamburger menu on mobile */
   .mobile-menu-toggle {
@@ -226,7 +229,6 @@ body {
     gap: 0;
     padding: 20px 0;
     margin-top: 10px;
-    pointer-events: auto;
   }
   
   /* Show nav-pill when active (menu open) */
@@ -287,10 +289,11 @@ body {
   }
   
   .policy-card {
-    padding: 30px 20px;
+    padding: 32px;
   }
 }
 
+/* Small mobile screens */
 @media (max-width: 480px) {
   .top-nav {
     height: 65px;
@@ -311,6 +314,18 @@ body {
   .policy-wrapper {
     padding-top: 110px;
     padding-bottom: 40px;
+  }
+  
+  .policy-card {
+    padding: 24px 20px;
+  }
+  
+  .policy-card h1 {
+    font-size: 28px;
+  }
+  
+  .policy-card h2 {
+    font-size: 18px;
   }
 }
 
