@@ -45,11 +45,12 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass-border);
+    background: transparent; /* Transparent on desktop */
+    backdrop-filter: none; /* No blur on desktop */
+    -webkit-backdrop-filter: none;
+    border-bottom: none; /* No border on desktop */
     height: 80px;
+    transition: all 0.3s ease;
 }
 
 .logo-img { 
@@ -89,7 +90,7 @@ body {
 
 /* Mobile Menu Toggle Button */
 .mobile-menu-toggle {
-    display: none;
+    display: none; /* Hide by default */
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
@@ -102,7 +103,6 @@ body {
     line-height: 1;
     height: 44px;
     width: 44px;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -737,8 +737,23 @@ body {
         -webkit-overflow-scrolling: touch;
     }
 }
-
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex; /* Show only on mobile */
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        background: rgba(0, 0, 0, 0.95); /* Black background only on mobile */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--glass-border);
+        padding: 15px 20px;
+        height: 70px;
+    }
+}
 /* Prevent body scroll when menu is open */
 body.menu-open {
     overflow: hidden;
 }
+
