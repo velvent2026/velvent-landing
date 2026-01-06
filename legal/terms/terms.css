@@ -181,11 +181,11 @@ body {
 .accordion-body ul {
   margin: 10px 0 15px 18px;
 }
-/* ================= FOOTER ================= */
 
+/* ================= FOOTER ================= */
 .site-footer {
   margin-top: 120px;
-  padding: 60px 60px;
+  padding: 60px 20px;
 
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(14px);
@@ -195,20 +195,34 @@ body {
 .footer-inner {
   max-width: 1400px;
   margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 30px;
+  text-align: center;
 }
 
+/* For desktop - keep horizontal layout */
+@media (min-width: 768px) {
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  .footer-center {
+    order: 2;
+  }
+  
+  .footer-socials {
+    order: 3;
+  }
+}
 
 /* Left section */
-.footer-center {
-  justify-self: center;
-  display: flex;
-  gap: 26px;
+.footer-left {
+  order: 1;
 }
-
 
 .footer-brand {
   font-weight: 600;
@@ -217,9 +231,31 @@ body {
   opacity: 0.95;
 }
 
+/* Center links */
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .footer-center {
+    flex-direction: row;
+    gap: 26px;
+  }
+}
+
 .footer-links {
   display: flex;
-  gap: 22px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .footer-links {
+    flex-direction: row;
+    gap: 22px;
+  }
 }
 
 .footer-links a {
@@ -235,11 +271,9 @@ body {
 
 /* Social icons */
 .footer-socials {
-  justify-self: end;
-  gap: 14px;
   display: flex;
+  gap: 14px;
 }
-
 
 .footer-socials a {
   color: rgba(255, 255, 255, 0.75);
@@ -250,4 +284,27 @@ body {
 .footer-socials a:hover {
   color: #ffffff;
   transform: translateY(-2px);
+}
+
+/* ================= MOBILE NAVBAR ================= */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+  
+  .nav-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-pill {
+    padding: 8px 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .container {
+    margin-top: 180px; /* More space for stacked navbar */
+  }
 }
