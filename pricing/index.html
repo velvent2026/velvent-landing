@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Velvent Pricing Toolkit</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="pricing.css">
@@ -10,17 +10,20 @@
 </head>
 <body>
 
+    <!-- Background Container -->
+    <div class="page-bg"></div>
+
     <header class="navbar">
-        <img src="../images/common/velvent_logo.png" alt="Logo" class="logo-img">
-        <nav class="nav-links">
+        <img src="../images/common/velvent_logo_white.png" alt="Logo" class="logo-img">
+        <nav class="nav-links" id="navLinks">
             <a href="../">Home</a>
             <a href="../pricing/">Pricing</a>
             <a href="#" class="nav-soon" data-soon="Coming soon">Career</a>
         </nav>
-        <div class="nav-icons">
-            <i class=""></i>
-            <i class=""></i>
-        </div>
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <span class="menu-icon">☰</span>
+        </button>
     </header>
 
     <main class="pricing-container">
@@ -95,7 +98,7 @@
         <nav class="footer-nav">
             <a href="../about/">About Us</a>
             <a href="../legal/privacy/">Privacy Policy</a>
-            <a href="mailto:Velvent2026@gmail">Contact</a>
+            <a href="mailto:Velvent2026@gmail.com">Contact</a>
         </nav>
         <div class="footer-socials">
          <a href="https://www.instagram.com/velvent2026/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -105,6 +108,69 @@
     </footer>
 
     <script src="pricing.js"></script>
+    <script>
+        // Mobile Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (mobileMenuToggle && navLinks) {
+                mobileMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isActive = navLinks.classList.toggle('active');
+                    this.classList.toggle('active', isActive);
+                    
+                    // Change icon
+                    const menuIcon = this.querySelector('.menu-icon');
+                    if (isActive) {
+                        menuIcon.textContent = '×';
+                        menuIcon.style.fontSize = '28px';
+                        document.body.classList.add('menu-open');
+                    } else {
+                        menuIcon.textContent = '☰';
+                        menuIcon.style.fontSize = '24px';
+                        document.body.classList.remove('menu-open');
+                    }
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!navLinks.contains(e.target) && 
+                        !mobileMenuToggle.contains(e.target) &&
+                        window.innerWidth <= 768) {
+                        navLinks.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenuToggle.querySelector('.menu-icon').textContent = '☰';
+                        mobileMenuToggle.querySelector('.menu-icon').style.fontSize = '24px';
+                        document.body.classList.remove('menu-open');
+                    }
+                });
+                
+                // Close menu when clicking a link
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            navLinks.classList.remove('active');
+                            mobileMenuToggle.classList.remove('active');
+                            mobileMenuToggle.querySelector('.menu-icon').textContent = '☰';
+                            mobileMenuToggle.querySelector('.menu-icon').style.fontSize = '24px';
+                            document.body.classList.remove('menu-open');
+                        }
+                    });
+                });
+                
+                // Close menu on window resize
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768) {
+                        navLinks.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenuToggle.querySelector('.menu-icon').textContent = '☰';
+                        mobileMenuToggle.querySelector('.menu-icon').style.fontSize = '24px';
+                        document.body.classList.remove('menu-open');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-
