@@ -307,7 +307,132 @@ html, body {
 
 .badge-tag { color: var(--text-dim); font-size: 12px; border: 1px solid var(--border); padding: 5px 15px; border-radius: 30px; text-transform: uppercase; letter-spacing: 2px; }
 .mini-logo { height: 45px; vertical-align: middle; margin-left: 10px; }
+/* ===========================================
+   MOBILE RESPONSIVE STYLES
+=========================================== */
 
+@media (max-width: 1024px) {
+  .trust-card {
+    padding: 40px;
+    gap: 40px;
+    max-width: 95%;
+  }
+  
+  .trust-visual svg {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trust-area {
+    padding-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .trust-wrapper {
+    gap: 40px;
+  }
+  
+  .trust-heading h2 {
+    font-size: 2.2rem;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .trust-heading h3 {
+    font-size: 2.2rem;
+    margin-top: 5px;
+  }
+  
+  .mini-logo {
+    height: 35px;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  
+  .trust-card {
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.15),
+      rgba(255,255,255,0.05)
+    );
+  }
+  
+  .trust-visual svg {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .trust-text {
+    max-width: 100%;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-area {
+    padding-bottom: 60px;
+  }
+  
+  .trust-wrapper {
+    gap: 30px;
+  }
+  
+  .trust-heading h2 {
+    font-size: 1.8rem;
+  }
+  
+  .trust-heading h3 {
+    font-size: 1.8rem;
+  }
+  
+  .mini-logo {
+    height: 30px;
+  }
+  
+  .trust-card {
+    padding: 25px 20px;
+    gap: 30px;
+    border-radius: 20px;
+  }
+  
+  .trust-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+  .trust-heading h2 {
+    font-size: 1.6rem;
+  }
+  
+  .trust-heading h3 {
+    font-size: 1.6rem;
+  }
+  
+  .trust-card {
+    padding: 20px 15px;
+  }
+}
+/* SVG / Cards */
+.trust-visual {
+  flex-shrink: 0;
+}
+
+.trust-visual svg {
+  width: 100%;
+  height: auto;
+  max-width: 463px;
+}
 /* FAQ Professional Layout */
 .faq-accordion { max-width: 900px; margin: 0 auto; }
 .faq-item { background: #080808; border: 1px solid var(--border); border-radius: 15px; margin-bottom: 20px; transition: 0.3s; }
@@ -1151,6 +1276,7 @@ html, body {
     font-size: 1.6rem;
   }
 }
+
 
 
 
