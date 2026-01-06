@@ -52,7 +52,6 @@ body {
     height: 80px;
     transition: all 0.3s ease;
 }
-
 .logo-img { 
     height: 50px; 
     width: auto;
@@ -78,14 +77,20 @@ body {
     opacity: 0.7;
     transition: 0.3s;
 }
-
 .nav-links a:hover { 
     opacity: 1; 
 }
 
+.nav-icons { 
+    display: flex; 
+    gap: 20px; 
+    font-size: 1.2rem; 
+    cursor: pointer; 
+}
+
 /* Mobile Menu Toggle Button */
 .mobile-menu-toggle {
-    display: none; /* Hidden by default on desktop */
+    display: none;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
@@ -179,7 +184,7 @@ h1 {
     justify-content: center;
     align-items: stretch;
     gap: 25px;
-    flex-wrap: nowrap; /* Keep all cards in one line on desktop */
+    flex-wrap: nowrap; /* Change this from wrap to nowrap */
 }
 
 .card {
@@ -190,7 +195,8 @@ h1 {
     border-radius: 32px;
     padding: 45px 35px;
     flex: 1;
-    min-width: 280px; /* Reduced min-width to fit 3 cards */
+    min-width: 300px;
+    max-width: 380px;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -199,7 +205,6 @@ h1 {
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     position: relative;
 }
-
 .card:hover { 
     transform: translateY(-12px); 
     background: rgba(255, 255, 255, 0.1);
@@ -216,7 +221,20 @@ h1 {
 .card.popular:hover { 
     transform: scale(1.07) translateY(-12px); 
 }
-
+@media (max-width: 768px) {
+    .cards-wrapper {
+        flex-wrap: wrap; /* Wrap on mobile only */
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 450px;
+        padding: 35px 25px;
+    }
+}
 /* --- TYPOGRAPHY --- */
 .price { 
     display: flex; 
@@ -474,7 +492,7 @@ h3 {
     }
     
     .card {
-        min-width: 240px; /* Further reduced for tablet */
+        min-width: 280px;
     }
     
     .footer {
@@ -488,9 +506,8 @@ h3 {
 }
 
 @media (max-width: 768px) {
-    /* === NAVBAR MOBILE FIXES === */
-    .navbar {
-        display: flex;
+   .navbar {
+        display: flex; /* Switch back to flex for mobile */
         justify-content: space-between;
         align-items: center;
         background: rgba(0, 0, 0, 0.95);
@@ -499,10 +516,11 @@ h3 {
         border-bottom: 1px solid var(--glass-border);
         padding: 15px 20px;
         height: 70px;
-    }
+    }}
     
     .logo-img {
         height: 40px;
+        justify-self: start;
     }
     
     .nav-links {
@@ -524,6 +542,7 @@ h3 {
         gap: 0;
         padding: 20px 0;
         margin-top: 10px;
+        animation: slideDown 0.3s ease forwards;
     }
     
     @keyframes slideDown {
@@ -537,9 +556,8 @@ h3 {
         }
     }
     
-    .nav-links.active {
+   .nav-links.active {
         display: flex;
-        animation: slideDown 0.3s ease forwards;
     }
     
     .nav-links a {
@@ -552,8 +570,7 @@ h3 {
         display: block;
         margin: 0;
     }
-    
-    .nav-links a:last-child {
+     .nav-links a:last-child {
         border-bottom: none;
     }
     
@@ -563,11 +580,10 @@ h3 {
     }
     
     /* Show mobile menu button on mobile */
-    .mobile-menu-toggle {
+     .mobile-menu-toggle {
         display: flex;
+        justify-self: end;
     }
-    
-    /* === PRICING MOBILE FIXES === */
     .pricing-container {
         padding: 100px 20px 40px;
     }
@@ -584,7 +600,6 @@ h3 {
     }
     
     .cards-wrapper {
-        flex-wrap: wrap;
         flex-direction: column;
         align-items: center;
         gap: 30px;
@@ -741,8 +756,24 @@ body {
         -webkit-overflow-scrolling: touch;
     }
 }
-
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex; /* Show only on mobile */
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        background: rgba(0, 0, 0, 0.95); /* Black background only on mobile */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--glass-border);
+        padding: 15px 20px;
+        height: 70px;
+    }
+}
 /* Prevent body scroll when menu is open */
 body.menu-open {
     overflow: hidden;
 }
+
+this is my current code, its no use top bar  is not going centre and the premium box isnt in the same line
