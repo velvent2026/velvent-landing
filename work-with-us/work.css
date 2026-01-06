@@ -606,7 +606,7 @@ select option {
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    height: 70px;
+    height: 75px;
     pointer-events: auto;
   }
   
@@ -619,14 +619,14 @@ select option {
   }
   
   .nav-logo {
-    height: 35px;
+    height: 50px;
   }
   
   /* Hide desktop nav-pill by default on mobile */
   .nav-pill {
     display: none;
     position: fixed;
-    top: 70px;
+    top: 75px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -688,7 +688,7 @@ select option {
   }
   
   .nav-logo {
-    height: 30px;
+    height: 45px;
   }
   
   .mobile-menu-toggle {
@@ -720,3 +720,4 @@ body {
     -webkit-overflow-scrolling: touch;
   }
 }
+
