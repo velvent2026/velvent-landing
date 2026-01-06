@@ -125,8 +125,9 @@ body {
   width: 100%;
 }
 /* Mobile Menu Toggle Button - FIXED */
+/* Mobile Menu Toggle Button - FIXED */
 .mobile-menu-toggle {
-    display: none; /* Hide by default */
+    display: none; /* Hidden by default on desktop */
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
@@ -139,7 +140,6 @@ body {
     line-height: 1;
     height: 44px;
     width: 44px;
-    /* REMOVE this line: display: flex; */
     align-items: center;
     justify-content: center;
 }
@@ -152,10 +152,10 @@ body {
     transform: rotate(90deg);
 }
 
-/* Only show on mobile */
+/* Show only on mobile */
 @media (max-width: 768px) {
     .mobile-menu-toggle {
-        display: flex; /* Show only on mobile */
+        display: flex; /* Visible on mobile */
     }
 }
 .mobile-menu-toggle:hover {
@@ -839,14 +839,10 @@ body {
         height: 70px;
     }
 }
-@media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: flex; /* Show only on mobile */
-    }
-}
 /* Prevent body scroll when menu is open */
 body.menu-open {
   overflow: hidden;
 }
+
 
 
